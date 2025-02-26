@@ -117,11 +117,6 @@ animation: smoothHover 0.4s ease forwards;
     margin-right: 10px;
   }
 
-  // &:hover {
-  //   background-color: #0056b3;
-  //   transform: scale(1.05);
-  // }
-
   &:focus {
     outline: none;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
@@ -138,10 +133,9 @@ animation: smoothHover 0.4s ease forwards;
 .frame {
   width: 70%;
   height: 100%;
-  border: 2px solid #ffffff; /* Frame color */
   border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #ffffff ;
+  background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
 }
