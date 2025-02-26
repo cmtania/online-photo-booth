@@ -1,0 +1,19 @@
+/* filepath: /Z:/Git/photo-booth/src/app/app.component.scss */
+body {
+    background-color: rgb(95, 134, 100);
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(95, 134, 100);
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px; /* Adjust the gap as needed */
+  }

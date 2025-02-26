@@ -1,0 +1,23 @@
+/* filepath: /z:/Git/photo-booth/src/app/modules/components/camera/camera.component.scss */
+.camera-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+video {
+  width: 100%;
+  height: auto;
+}
+
+.countdown {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 72px; /* Make the countdown number bigger */
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  border-radius: 10px;
+}

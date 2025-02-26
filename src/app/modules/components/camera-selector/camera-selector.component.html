@@ -1,0 +1,6 @@
+<div class="camera-selector">
+    <label for="cameraSelect">Select Camera:</label>
+    <select id="cameraSelect" (change)="onCameraChange($event)">
+      <option *ngFor="let camera of cameras" [value]="camera.deviceId">{{ camera.label || 'Camera ' + (cameras.indexOf(camera) + 1) }}</option>
+    </select>
+  </div>
