@@ -130,12 +130,94 @@ animation: smoothHover 0.4s ease forwards;
   height: 100%; /* Make it the same height as the camera container */
 }
 
-.frame {
-  width: 70%;
-  height: 100%;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+
+
+select {
+  width: 100%;
+  padding: 15px 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  font-size: 16px;
+  font-weight: bold;
+  color: #1a1a2e;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  transition: all 0.3s ease;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="4" height="5" viewBox="0 0 4 5"><path fill="%23333" d="M2 0L0 2h4L2 0zm0 5L0 3h4l-2 2z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 8px 10px;
 }
+
+select:focus {
+  border-color: #4b4453;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+select:focus + label,
+select:not(:placeholder-shown) + label {
+  top: -20px;
+  font-size: 12px;
+  color: #007bff;
+}
+
+/* Modern dropdown styles */
+select::-ms-expand {
+  display: none;
+}
+
+select option {
+  padding: 10px;
+  background-color: #fff;
+  color: #333;
+}
+
+select option:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+
+#numberOfPhotos {
+  min-width: 150px;
+}
+
+.col-auto {
+  label {
+    font-weight: bold;
+    color: #ffffff;
+  }
+}
+
+.timer-select {
+  margin-top: 10px;
+}
+
+.background {
+  margin-top: 10px;
+
+  .background-item {
+    width: 100%;
+    height: 50px;
+    color: #ffffff;
+    font-weight:500;
+    border: 1px solid transparent;
+    transition: border 0.3s ease;
+    border-radius: 10px;
+
+    .background-label {
+      margin-left: 15px;
+      color: transparent;
+    }
+
+    &:hover {
+      cursor: pointer;
+      color: #413f3f;
+      border: 1px solid #474747;
+    }
+  }
+}
+
