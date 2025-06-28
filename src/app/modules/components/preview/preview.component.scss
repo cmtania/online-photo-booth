@@ -20,3 +20,9 @@
   border-radius: 8px; /* Slight rounding for the image */
   object-fit: cover; /* Ensures the image fits nicely */
 }
+.preview-container {
+  display: flex;
+  flex-direction: row; 
+  gap: 16px; 
+  align-items: center;
+}

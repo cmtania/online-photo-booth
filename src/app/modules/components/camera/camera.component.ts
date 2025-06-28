@@ -24,8 +24,8 @@ export class CameraComponent implements AfterViewInit {
     this.cameraService.initCamera(this.video.nativeElement, this.selectedCameraId);
   }
 
-  startCountdown(time: number): void {
-    let capturesRemaining = 4; // Number of captures
+  startCountdown(time: number, photoToTake: number): void {
+    let capturesRemaining = photoToTake; // Number of captures
     this.countdown = time;
 
     const interval = setInterval(() => {

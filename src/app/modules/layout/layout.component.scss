@@ -124,13 +124,8 @@ animation: smoothHover 0.4s ease forwards;
 }
 
 #frame-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%; /* Make it the same height as the camera container */
+  padding: 20px;
 }
-
-
 
 select {
   width: 100%;
@@ -210,14 +205,20 @@ select option:hover {
 
     .background-label {
       margin-left: 15px;
-      color: transparent;
+      color: #474747;
     }
 
     &:hover {
       cursor: pointer;
-      color: #413f3f;
-      border: 1px solid #474747;
     }
+  }
+
+  .selected {
+    border: 5px solid #ffc107;
+    color: #413f3f;
   }
 }
 
+#photo-container {
+  margin-top: 10px;
+}

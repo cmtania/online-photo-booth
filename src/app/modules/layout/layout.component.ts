@@ -1,6 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
 import { CameraComponent } from '../components/camera/camera.component';
 import { SelectModel } from '../models/count-select.model';
+import * as htmlToImage from 'html-to-image';
+import { toPng, toJpeg, toBlob, toPixelData, toSvg } from 'html-to-image';
 
 @Component({
   selector: 'app-layout',
@@ -17,20 +19,20 @@ export class LayoutComponent {
    };
    
   photos: string[] = [];
-  countdownTime: number = 3; // Default countdown time
+  countdownTime: number = 3;
+  photoToTake: number = 4;
+  backgroundStyle: string = "";
 
   countSelection: SelectModel[] =  [
-    { Label: '1 Photo', Value: 1 },
-    { Label: '2 Photos', Value: 2 },
-    { Label: '3 Photos', Value: 3 },
-    { Label: '4 Photos', Value: 3 }
+    { Label: '4 Photos', Value: 4 },
+    { Label: '6 Photos', Value: 6 },
+    { Label: '8 Photos', Value: 8 }
   ];
 
   timerSelection: SelectModel[] =  [
-    { Label: '1 Second', Value: 1 },
-    { Label: '3 Seconds', Value: 3 },
+    { Label: '3 Second', Value: 3},
     { Label: '5 Seconds', Value: 5 },
-    { Label: '10 Seconds', Value: 10 }
+    { Label: '10 Seconds', Value: 10 },
   ];
 
   backgroundSelection: SelectModel[] =  [
@@ -46,7 +48,7 @@ export class LayoutComponent {
   }
 
   startCountdown(): void {
-    this.cameraComponent.startCountdown(this.countdownTime);
+    this.cameraComponent.startCountdown(this.countdownTime,  this.photoToTake);
   }
 
   onCameraSelected(cameraId: string): void {
@@ -56,5 +58,31 @@ export class LayoutComponent {
   onTimerSelected($event: any): void {
     const value = ($event.target as HTMLSelectElement).value;
     this.countdownTime = Number(value);
+  }
+
+  setBackground(background: string): void {
+    this.backgroundStyle = background;
+  }
+
+  onPhotoToTake($event: any): void {
+    const value = ($event.target as HTMLSelectElement).value;
+    this.photoToTake = Number(value);
+  }
+
+  savePhotos(): void {
+    const photoContainer = document.getElementById('photo-container');
+    if (!photoContainer) {
+      console.error('Photo container element not found.');
+      return;
+    }
+
+    htmlToImage
+      .toJpeg(photoContainer, { quality: 0.95 })
+      .then(function (dataUrl) {
+        var link = document.createElement('a');
+        link.download = 'online-photo-booth.jpeg';
+        link.href = dataUrl;
+        link.click();
+      });
   }
 }

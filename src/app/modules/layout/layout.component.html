@@ -8,14 +8,13 @@
     </div>
     <div class="row">
       <div class="col-12 col-md-4">
-        
       <div class="col-auto">
         <label for="camera" class="form-label">Camera</label>
         <app-camera-selector id="camera" (cameraSelected)="onCameraSelected($event)"></app-camera-selector>
       </div>
       <div class="col-auto">
         <label for="numberOfPhotos" class="form-label">Number of Photos</label>
-        <select id="numberOfPhotos" class="form-select">
+        <select id="numberOfPhotos" class="form-select" (change)="onPhotoToTake($event)">
           <option *ngFor="let count of countSelection" [value]="count.Value">{{ count.Label }}</option>
         </select>
       </div>
@@ -29,7 +28,9 @@
         <label for="background" class="form-label">Background</label>
        <div id="background">
         <ng-container *ngFor="let background of backgroundSelection">
-          <div class="background-item d-flex justify-content-start align-items-center mb-2" [style]="background.Value">
+          <div class="background-item d-flex justify-content-start align-items-center mb-2" 
+                (click)="setBackground(background.Value)" [style]="background.Value"
+                [ngClass]="{'selected': background.Value === backgroundStyle}">
             <span class="background-label">{{ background.Label}}</span>
           </div>
         </ng-container>
@@ -44,21 +45,30 @@
             <button type="button" class="btn btn-capture" (click)="startCountdown()">
               <i class="fas fa-camera"></i> Capture Photo
             </button>
+            <button type="button" class="btn btn-capture" (click)="savePhotos()">
+              <i class="fas fa-download"></i> Save Photos
+            </button>
         </div>
+      
       </div>
-      <!-- <div id="photo-container" class="col-12 col-md-4">
-          <div id="frame-container">
-            <div class="frame">
-                <app-preview [photos]="photos"></app-preview>
-            </div>
-          </div>
-      </div> -->
     </div>
+    @if (this.photos.length > 0) {
+      <div class="row">
+        <div id="photo-container" class="col-12 col-md-12" >
+            <div id="frame-container" [style]="backgroundStyle">
+              <div class="frame">
+                  <app-preview [photos]="photos"></app-preview>
+              </div>
+            </div>
+        </div>
+    </div>
+    }
   </div>
   <div class="developer container">
     <div class="tech-stack">
-      <span class="techs"><i class="fab fa-angular"></i> Angular</span>
+      <span class="techs"><i class="fab fa-angular"></i> Angular v18</span>
       <span class="techs"><i class="fab fa-bootstrap"></i> Bootstrap</span>
+      <span class="techs"><i class="fab fa-css3"></i> CSS3</span>
     </div>
     <div class="row dev-by">
       <span>Developed by Christian Tania</span>
