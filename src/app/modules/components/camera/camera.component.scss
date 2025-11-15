@@ -3,12 +3,15 @@
   position: relative;
   width: 100%;
   height: auto;
+  min-height: 600px;
   margin: 0 auto;
 }
 
 video {
   width: 100%;
   height: auto;
+  min-height: 600px;
+  object-fit: cover;
 }
 
 .countdown {

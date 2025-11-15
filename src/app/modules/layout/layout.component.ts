@@ -39,7 +39,8 @@ export class LayoutComponent {
     { Label: 'Everlasting Sky', Value: "background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);" },
     { Label: 'Jungle Day', Value:  "background-image: linear-gradient(45deg, #8baaaa 0%, #ae8b9c 100%);" },
     { Label: 'Warm Flame', Value: "background-image: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);"},
-    { Label: 'Tempting Azure', Value: "background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);" }
+    { Label: 'Tempting Azure', Value: "background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);" },
+    { Label: 'Frontier Year End Party 2025', Value: "background-image: linear-gradient(120deg, #DD7E30FF 0%, #E36C08 100%);" }
   ];
   
 

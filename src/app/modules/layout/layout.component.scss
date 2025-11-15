@@ -221,4 +221,29 @@ select option:hover {
 
 #photo-container {
   margin-top: 10px;
+
+  .title {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 20px;
+    position: relative;
+    margin-top: 15px;
+  }
+
+  .year-title {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 18px;
+    position: relative;
+    margin-top: 5px;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
 }
